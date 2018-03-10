@@ -6,13 +6,14 @@
 
   export default {
     // Expects ids as one or more WMS layer IDs (comma-separated)
-    props: ['baseurl', 'format', 'transparent', 'ids', 'crs'],
+    props: ['baseurl', 'format', 'transparent', 'ids', 'crs', 'opacity'],
     mounted () {
       this.$tileLayer = L.tileLayer.wms(this.baseurl, {
         format: this.format,
         transparent: this.transparent,
         layers: this.ids,
-        crs: this.crs
+        crs: this.crs,
+        opacity: this.opacity
       })
     },
     methods: {
